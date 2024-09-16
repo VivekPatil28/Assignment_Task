@@ -21,6 +21,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 header #connect_tel{
     background-color:#45b496;
@@ -29,6 +30,7 @@ header #connect_tel{
     font-size: 15px;
     border-radius: 5px;
     color: rgb(255, 255, 255);
+
 }
 header h1 {
     font-size: 2rem;
@@ -37,13 +39,18 @@ header h1 {
 }
 
 .stats {
+    margin: 20px 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-bottom: 20px;
+    flex-wrap: wrap;
     font-size: 1.2rem;
 }
 
+.stats .percentages{
+    margin: 10px 5px;
+}
 .stats .percentages span {
     color:#58e6c1 ;
 }
@@ -71,7 +78,7 @@ header h1 {
 }
 
 .options {
-    margin: 20px 0;
+    margin: 20px 10px;
 }
 
 .options button {
@@ -79,11 +86,12 @@ header h1 {
     color: white;
     border: none;
     padding: 10px 20px;
-    margin: 0 5px;
+    margin: 10px 5px;
     cursor: pointer;
     font-size: 1rem;
     border-radius: 5px;
 }
+
 
 table {
     width: 100%;
@@ -119,4 +127,15 @@ table tbody tr:nth-child(even) {
 
 table tbody td {
     font-size: 1.2rem;
+}
+
+@media (max-width:767px) {
+    #table_cont{
+        overflow-x: scroll;
+        max-width: 100vw;
+    }
+ 
+    #connect_tel{
+        margin: 0 auto;
+    }
 }
