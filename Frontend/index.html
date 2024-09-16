@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hodlinfo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>HODLINFO</h1>
+            <div class="options">
+                <button>INR</button>
+                <button>BTC</button>
+                <button>BUY BTC</button>
+            </div>
+            <Button id="connect_tel">Connect Telegram</Button>
+        </header>
+
+        <div class="stats">
+            <div class="percentages">
+                <span>0.1%</span>
+                <small> 5 Mins</small>
+            </div>
+            <div class="percentages">
+                <span>0.96%</span>
+                <small>1 Hour</small>
+            </div>
+            <div class="price-section">
+                <h2>Best Price to Trade</h2>
+                <h3>₹ 26,56,110</h3>
+                <p>Average BTC/INR net price including commission</p>
+            </div>
+            <div class="percentages">
+                <span>2.73% </span>
+                <small>1 Day</small>
+            </div>
+            <div class="percentages">
+                <span>7.51% </span>
+                <small>7 Days</small>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Last Traded Price</th>
+                    <th>Buy / Sell Price</th>
+                    <th>Volume</th>
+                    <th>Base Unit</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+<script>
+    const tbody = document.getElementById("tbody");
+    fetch('http://localhost:3000/api/tickers')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach((ticker,i) => {
+                    const tr = document.createElement("tr");
+                    const index =document.createElement("td");
+                    const name =document.createElement("td");
+                    const last =document.createElement("td");
+                    const buysell =document.createElement("td");
+                    const volume =document.createElement("td");
+                    const base_unit =document.createElement("td");
+
+                    index.innerText=i+1;
+                    tr.appendChild(index);
+                    name.innerText=ticker.name;
+                    tr.appendChild(name);
+                    last.innerText="₹ "+ Number.parseFloat(ticker.last).toLocaleString();
+                    tr.appendChild(last);
+
+                    buysell.innerText="₹ "+Number.parseFloat(ticker.buy).toLocaleString()+"/ ₹ "+Number.parseFloat(ticker.sell).toLocaleString();
+                    tr.appendChild(buysell);
+
+                    volume.innerHTML=ticker.volume;
+                    tr.appendChild(volume);
+
+                    base_unit.innerText=ticker.base_unit;
+                    tr.appendChild(base_unit);
+
+
+
+
+
+                    tbody.appendChild(tr);
+                });
+            });
+
+</script>
+
+</html>

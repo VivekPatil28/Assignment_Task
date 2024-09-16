@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #191826;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header #connect_tel{
+    background-color:#45b496;
+    border: none;
+    padding: 5px 9px;
+    font-size: 15px;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+}
+header h1 {
+    font-size: 2rem;
+    color: #58e6c1;
+    margin-bottom: 10px;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.stats .percentages span {
+    color:#58e6c1 ;
+}
+
+.stats small {
+    display: block;
+    color: #888;
+}
+
+.price-section h2 {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #888;
+    font-weight: bold;
+}
+
+.price-section h3 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+.price-section p {
+    font-size: 1rem;
+    color: #888;
+}
+
+.options {
+    margin: 20px 0;
+}
+
+.options button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    margin-top: 30px;
+    border-collapse: collapse;
+}
+
+table thead {
+    background-color: #1a1a1a;
+}
+
+table th,
+table td {
+    padding: 15px;
+}
+.end{
+    text-align: end;
+}
+
+table th {
+    font-size: 1rem;
+    color: #888;
+}
+
+table tbody tr {
+    background-color: #232323;
+    border-bottom: 2px solid #1a1a1a;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #1a1a1a;
+}
+
+table tbody td {
+    font-size: 1.2rem;
+}
